@@ -1,29 +1,30 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+<template lang="pug">
+.app
+  Bubble(:value="text")
+  input.mt-4.rounded.border.border-gray-300.bg-gray-100(type="text" v-model="text")
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent, ref } from 'vue';
 
-export default defineComponent({
-  name: 'App',
+import Bubble from '@/components/Bubble.vue';
+
+const App = defineComponent({
   components: {
-    HelloWorld,
+    Bubble,
+  },
+  setup() {
+    const text = ref('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mauris elit, interdum in urna cursus, congue blandit quam. Ut ultricies diam ex, vitae auctor tellus rutrum sed. Vivamus porttitor lobortis hendrerit.');
+
+    return {
+      text,
+    };
   },
 });
+
+export default App;
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+// .app {}
 </style>
