@@ -1,5 +1,8 @@
 <template lang="pug">
 .app.p-4
+  .mb-2
+    p.px-2.font-mono.text-gray-600 <a class="hover:opacity-75" href="https://github.com/pixelart7/chasm-util-bubble/">pixelart7/chasm-util-bubble</a>
+    p.px-2.font-mono.text-gray-500.text-xs Built with coffee and webdev love by <a class="underline hover:opacity-75" href="https://pixelart7.github.io/">github/pixelart7 (aka. PIX7)</a>
   .flex
     .flex-1.px-2.py-2
       textarea.p-2.border.border-blue-500.w-full(v-model="textInput" rows="20")
